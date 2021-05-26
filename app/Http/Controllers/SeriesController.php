@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Serie;
 
 class SeriesController extends Controller
 {
@@ -13,7 +14,10 @@ class SeriesController extends Controller
      */
     public function index()
     {
-        return view('series.index');
+        $series = Serie::all();
+        return view('series.index', [
+            'series' => $series //passing as array in order to loop throught it in the ui
+        ]);
     }
 
     /**
@@ -23,7 +27,7 @@ class SeriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('series.create');
     }
 
     /**
@@ -34,7 +38,13 @@ class SeriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $serie = Serie::create([
+            'name' => $request->input('name'),
+            'seasons' => $request->input('seasons'),
+            'description' => $request->input('description')
+        ]);
+
+        return redirect('/');
     }
 
     /**

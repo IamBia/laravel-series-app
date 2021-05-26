@@ -14,4 +14,4 @@ use App\Http\Controllers\SeriesController;
 |
 */
 
-Route::resource('/', SeriesController::class);
+Route::resource('/series', SeriesController::class);
