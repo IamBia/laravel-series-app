@@ -9,7 +9,7 @@
     </div>
 </div>
 <div class="flex justify-center pt-20">
-    <form action="/" method="POST">
+    <form action="/series" method="POST">
         @csrf
         <div class="block">
             <input type="text" name="name" placeholder="Serie name" class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400" >

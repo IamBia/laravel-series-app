@@ -8,14 +8,19 @@
     </div>
 
     <div class="pt-10">
-        <a href="/create" class="border-b-2 pb-2 border-dotted italic text-gray-500">Add a new serie &rarr;</a>
+        <a href="series/create" class="border-b-2 pb-2 border-dotted italic text-gray-500">Add a new serie &rarr;</a>
     </div>
     
     <div class="w-5/6 py-10">
         @foreach ($series as $serie)
         <div class="m-auto">
             <div class="float-right">
-                <a href="/series/{{ $serie->id }}/edit" class="border-b-2 pb-2 border-dotted italic text-gray-500">Edit serie &rarr;</a>
+                <a href="/series/{{ $serie->id }}/edit" class="border-b-2 pb-2 border-dotted italic text-green-500">Edit serie &rarr;</a>
+                <form action="/series" method="POST" class="pt-3">
+                    @csrf
+                    @method("delete")
+                    <button type="submit" class="border-b-2 pb-2 border-dotted italic text-red-500">Delete serie &rarr;</button>
+                </form>
             </div>
             <span class="uppercase text-blue-500 font-bold text-xs italic">Seasons: {{ $serie->seasons }}</span>
             

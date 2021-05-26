@@ -44,7 +44,7 @@ class SeriesController extends Controller
             'description' => $request->input('description')
         ]);
 
-        return redirect('/');
+        return redirect('/series');
     }
 
     /**
@@ -66,7 +66,14 @@ class SeriesController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $serie = Serie::find($id)->first();
+
+        // dd($serie);
+
+        return view('series.edit')->with('serie', $serie);
+
+       
     }
 
     /**
@@ -78,7 +85,14 @@ class SeriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $serie = Serie::where('id', $id)
+        ->update([
+            'name' => $request->input('name'),
+            'seasons' => $request->input('seasons'),
+            'description' => $request->input('description')
+        ]);
+
+        return redirect('/series');
     }
 
     /**
@@ -89,6 +103,9 @@ class SeriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $serie = Serie::find($id)->first();
+        $serie->delete();
+
+        return redirect('/series');
     }
 }

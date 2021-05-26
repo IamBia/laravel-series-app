@@ -15,7 +15,5 @@ class Serie extends Model
 
     public $timestamps = true;
 
-    public $dateFormat = 'h:m:s';
-
     protected $fillable = ['name', 'seasons', 'description'];
 }
