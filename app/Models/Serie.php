@@ -16,4 +16,9 @@ class Serie extends Model
     public $timestamps = true;
 
     protected $fillable = ['name', 'seasons', 'description'];
+
+    public function serieSeasons() {
+        return $this->hasMany(SerieSeason::class);
+
+    }
 }

@@ -6,9 +6,9 @@
     <div class="text-center">
         <h1 class="text-5xl bold uppercase">Series</h1>
     </div>
-
+    
     <div class="pt-10">
-        <a href="series/create" class="border-b-2 pb-2 border-dotted italic text-gray-500">Add a new serie &rarr;</a>
+        <a href="/series/create" class="border-b-2 pb-2 border-dotted italic text-gray-500">Add a new serie &rarr;</a>
     </div>
     
     <div class="w-5/6 py-10">
@@ -24,7 +24,9 @@
             </div>
             <span class="uppercase text-blue-500 font-bold text-xs italic">Seasons: {{ $serie->seasons }}</span>
             
-            <h2 class="text-gray-700 text-5xl">{{ $serie->name }}</h2>
+            <h2 class="text-gray-700 text-5xl hover:text-gray-500">
+                <a href="/series/{{ $serie->id }}">{{ $serie->name }}</a>
+            </h2>
             
             <p class="text-lg text-gray-700 py-6">{{ $serie->description }}</p>
             

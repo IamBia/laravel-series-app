@@ -44,6 +44,7 @@ class SeriesController extends Controller
             'description' => $request->input('description')
         ]);
 
+        
         return redirect('/series');
     }
 
@@ -55,7 +56,9 @@ class SeriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $serie = Serie::find($id);
+
+        return view('series.show')->with('serie', $serie);
     }
 
     /**
