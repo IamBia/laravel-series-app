@@ -13,7 +13,7 @@
 
             <ul>
                 <p class="text-lg text-gray-700 py-3">Seasons</p>
-                @forelse ($serie->serieSeasons() as $season)
+                @forelse ($serie->serieSeasons as $season)
 
                     <li class="inline italic text-gray-600 px-1 px-6 ">{{ $season['season_name'] }}</li>
                 @empty
