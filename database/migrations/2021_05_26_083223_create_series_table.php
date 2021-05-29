@@ -24,8 +24,8 @@ class CreateSeriesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('season_id'); //actually serie id
             $table->string('season_name');
-            $table->foreign('season_id')->references('id')->on('series')->onDelete('cascade');
             $table->timestamps();
+            $table->foreign('season_id')->references('id')->on('series')->onDelete('cascade');
         });
     }
     

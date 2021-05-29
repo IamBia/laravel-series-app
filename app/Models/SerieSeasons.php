@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SerieSeason extends Model
+class SerieSeasons extends Model
 {
     use HasFactory;
 
-    protected $table = 'series_seasons';
+    protected $table = 'serie_seasons';
 
     protected $primaryKey = 'id';
 
