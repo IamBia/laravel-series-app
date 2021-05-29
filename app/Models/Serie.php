@@ -21,4 +21,15 @@ class Serie extends Model
         return $this->hasMany(SerieSeasons::class);
 
     }
+    public function country() {
+        return $this->hasOne(Country::class);
+
+    }
+    public function states() {
+        return $this->hasManyThrough(
+            State::class, 
+            Country::class, 
+            'serie_id', //foreign key on serie seasons table
+            'country_id'); //foreign key on states table
+    }
 }

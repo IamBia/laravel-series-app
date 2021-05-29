@@ -4,6 +4,14 @@
     <div class="m-auto w-4/5 py-24">
         <div class="text-center">
             <h1 class="text-5xl bold uppercase">{{ $serie->name }}</h1>
+            <p>Made in: {{ $serie->country->country }}</p>
+            @foreach ($serie->states as $state)
+                @if ($serie->id == $state->country_id)
+                    <p> In {{ $state->state_name }}</p>
+                    @else
+                    <p>City unkwown</p>
+                @endif
+            @endforeach
         </div>
 
         <div class="m-auto">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Serie;
+use App\Models\Country;
 
 class SeriesController extends Controller
 {
@@ -57,6 +58,7 @@ class SeriesController extends Controller
     public function show($id)
     {
         $serie = Serie::find($id);
+        $country = Country::find($id);
 
         return view('series.show')->with('serie', $serie);
     }
@@ -70,7 +72,7 @@ class SeriesController extends Controller
     public function edit($id)
     {
 
-        $serie = Serie::find($id)->first();
+        $serie = Serie::find($id);
 
         // dd($serie);
 

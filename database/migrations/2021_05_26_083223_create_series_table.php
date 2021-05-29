@@ -27,6 +27,7 @@ class CreateSeriesTable extends Migration
             $table->timestamps();
             $table->foreign('season_id')->references('id')->on('series')->onDelete('cascade');
         });
+        
     }
     
     /**
