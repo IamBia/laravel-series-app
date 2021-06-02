@@ -60,6 +60,8 @@ class SeriesController extends Controller
         $serie = Serie::find($id);
         $country = Country::find($id);
 
+        // var_dump($serie->filming);
+
         return view('series.show')->with('serie', $serie);
     }
 

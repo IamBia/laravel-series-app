@@ -32,4 +32,14 @@ class Serie extends Model
             'serie_id', //foreign key on serie seasons table
             'country_id'); //foreign key on states table
     }
+
+    public function filming() {
+        return $this->hasOneThrough(
+            Filming::class,
+            Country::class,
+            'serie_id',
+            'country_id',
+            
+        );
+    }
 }

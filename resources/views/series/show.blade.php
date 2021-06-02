@@ -7,8 +7,8 @@
             <p>Made in: {{ $serie->country->country }}</p>
             @foreach ($serie->states as $state)
                 @if ($serie->id == $state->country_id)
-                    <p> In {{ $state->state_name }}</p>
-                    @else
+                    <p> In {{ $state->state_name }} at {{ date('d-m-Y', strtotime($serie->filming->filmed_at)) }}</p>
+                @else
                     <p>City unkwown</p>
                 @endif
             @endforeach
